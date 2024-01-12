@@ -2,7 +2,8 @@
 
 ## Descripción
 Este proyecto consiste en un sistema de gestión de cursos para una universidad, implementado en Python. Utiliza una base de datos MySQL para almacenar y gestionar la información de los cursos, como el código, nombre y créditos.
-
+![Imagen de Interfaz](https://raw.githubusercontent.com/FrankSkep/CRUD_Python-MySQL/main/assets/interfaz.png
+)
 ## Estructura del Proyecto
 
 ### 1. `conexion.py`
