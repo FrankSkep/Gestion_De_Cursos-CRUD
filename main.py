@@ -75,7 +75,7 @@ def ejecutarOpcion(opc):
             if not (codigoEliminar == ""):
                bd.eliminarCurso(codigoEliminar)
             else:
-               print("Codigo de curso no encontrado\n")
+               print("* Codigo no encontrado *\n")
          else:
             print("No se encontraron cursos\n")
       except Exception as err:

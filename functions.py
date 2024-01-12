@@ -1,9 +1,9 @@
 ########## Funcion para mostrar cursos existentes ##########
 def mostrarCursos(cursos):
-   print("\nCursos: \n")
+   print("\n\t\t\t> Cursos <\n")
    contador = 1 # Contador para enumerar cursos
    for curso in cursos:
-      datos = "{0}.Codigo: {1} | Nombre: {2} ({3} Creditos)"
+      datos = "{0}. Codigo: {1} | Nombre: {2} ({3} Creditos)"
       print(datos.format(contador, curso[0], curso[1], curso[2]))
       contador += 1
    print(" ")
@@ -18,10 +18,16 @@ def pedirDatosRegistrar():
       if len(codigo) == 6:
          codigoCorrecto = True
       else:
-         print("\n* Codigo incorrecto: el codigo debe tener 6 digitos\n")
+         print("\n* Codigo incorrecto: el codigo debe tener 6 digitos *\n")
          
    # Pedir nombre del curso
-   nombre = input("> Ingresa nombre del curso: ")
+   nombreCorrecto = False
+   while(not nombreCorrecto):
+      nombre = input("> Ingresa nombre del curso: ")
+      if (nombre.isnumeric()):
+         print("\n* Nombre no valido: Ingresa solo letras *")
+      else:
+         nombreCorrecto = True
    
    # Validar que ingrese un valor numerico en creditos
    creditosCorrectos = False
@@ -32,9 +38,9 @@ def pedirDatosRegistrar():
             creditosCorrectos = True
             creditos = int(creditos)
          else:
-            print("\n* Creditos no validos: Los creditos deben ser mayor a 0 \n")
+            print("\n* Creditos no validos: Los creditos deben ser mayor a 0 *\n")
       else:
-         print("\n* Creditos no validos: Deben ser numeros unicamente\n")
+         print("\n* Creditos no validos: Deben ser numeros unicamente *\n")
    # Guardar datos en una tupla 
    curso = (codigo, nombre, creditos)
    return curso # Retornar tupla con los datos ingresados
@@ -60,9 +66,9 @@ def pedirDatosActualizacion(cursos):
                creditosCorrectos = True
                creditos = int(creditos)
             else:
-               print("\n* Creditos no validos: Los creditos deben ser mayor a 0 \n")
+               print("\n* Creditos no validos: Los creditos deben ser mayor a 0 *\n")
          else:
-            print("\n* Creditos no validos: Deben ser numeros unicamente\n")
+            print("\n* Creditos no validos: Deben ser numeros unicamente *\n")
       # Guardar datos actualizados en la tupla
       curso = (codigoEditar, nombre, creditos)
    else:
@@ -82,6 +88,6 @@ def eliminacionCurso(cursos):
    
    # Si no existe el codigo ingresado
    if not existeCodigo:
-      print("\n* Curso no existente: verifique el codigo ingresado.\n")
+      print("\n* Curso no existente: verifique el codigo ingresado. *\n")
       codigoEliminar = ""
    return codigoEliminar
