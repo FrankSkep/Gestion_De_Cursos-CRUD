@@ -33,7 +33,7 @@ class ConexionBD():
             sql = "INSERT INTO cursos (codigo, nombre, creditos) VALUES ('{0}', '{1}', '{2}')"
             cursor.execute(sql.format(curso[0], curso[1], curso[2]))
             self.conexion.commit()
-            print("\n[ CURSO REGISTRADO ]\n")
+            print("\n> Curso Registrado <\n")
          except Error as err:
             print("Error al intentar la conexión: {0}".format(err))
 
@@ -45,7 +45,7 @@ class ConexionBD():
             sql = "UPDATE cursos SET nombre = '{0}', creditos = {1} WHERE codigo = '{2}'"
             cursor.execute(sql.format(curso[1], curso[2], curso[0]))
             self.conexion.commit()
-            print("\n[ CURSO ACTUALIZADO ]\n")
+            print("\n> Curso actualizado <\n")
 
          except Error as err:
             print("Error al intentar la conexión: {0}".format(err))
@@ -58,7 +58,7 @@ class ConexionBD():
             sql = "DELETE FROM cursos WHERE codigo = '{0}'"
             cursor.execute(sql.format(codigoEliminar))
             self.conexion.commit()
-            print("\n[ CURSO ELIMINADO ]\n")
+            print("\n> Curso eliminado <\n")
             
          except Error as err:
             print("Error al intentar la conexión: {0}".format(err))
