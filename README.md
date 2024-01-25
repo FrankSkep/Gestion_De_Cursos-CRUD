@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto consiste en un sistema de gestión de cursos para una universidad, implementado en Python. Utiliza una base de datos MySQL para almacenar y gestionar la información de los cursos, como el código, nombre y créditos.
+Este proyecto consiste en un sistema de gestión de cursos, implementado en Python. Utiliza una base de datos MySQL para almacenar y gestionar la información de los cursos, como el código, nombre y créditos.
 
 ## Estructura del Proyecto
 
