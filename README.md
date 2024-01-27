@@ -38,3 +38,5 @@ El archivo **`universidad.sql`** contiene el script SQL para crear la base de da
 4. Siga las indicaciones para listar, registrar, actualizar o eliminar cursos.
 
 5. Para salir del sistema, seleccione la opción correspondiente en el menú principal.
+
+Hecho por [Frank](https://github.com/FrankSkep)
