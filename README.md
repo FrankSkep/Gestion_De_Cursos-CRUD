@@ -1,4 +1,4 @@
-# Sistema de Gestión de Cursos - Universidad
+# Sistema de Gestión de Cursos
 
 ## Descripción
 
