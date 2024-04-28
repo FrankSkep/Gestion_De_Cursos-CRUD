@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto consiste en un sistema de gestión de cursos, implementado en Python. Utiliza una base de datos MySQL para almacenar y gestionar la información de los cursos, como el código, nombre y créditos.
+Sistema de gestión de cursos, implementado en Python. Utiliza una base de datos MySQL para almacenar y gestionar la información de los cursos, como el código, nombre y créditos.
 
 ## Estructura del Proyecto
 
@@ -37,6 +37,4 @@ El archivo **`database.sql`** contiene el script SQL para crear la base de datos
 
 4. Siga las indicaciones para listar, registrar, actualizar o eliminar cursos.
 
-5. Para salir del sistema, seleccione la opción correspondiente en el menú principal.
-
-Hecho por [Frank](https://github.com/FrankSkep)
+5. Para salir, seleccione la opción correspondiente en el menú principal.
