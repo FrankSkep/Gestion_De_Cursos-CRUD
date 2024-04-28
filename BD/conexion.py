@@ -9,7 +9,7 @@ class ConexionBD():
              password='123456',
              host='localhost',
              port=3306,
-             db='universidad'
+             db='cursos'
          )
       except Error as err:
          print("Error al intentar la conexión: {0}".format(err))
