@@ -14,7 +14,7 @@ class ConexionBD():
       except Error as err:
          print("Error al intentar la conexión: {0}".format(err))
    
-   # Metodo para mostrar cursos base de datos
+   # Metodo para mostrar cursos de base de datos
    def listarCursos(self):
       if self.conexion.is_connected():
          try:

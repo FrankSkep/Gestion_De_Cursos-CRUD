@@ -1,13 +1,14 @@
 from BD.conexion import ConexionBD
 import functions
-
+from utilities import *
 
 def menuPrincipal():
     continuar = True
-    # Bucle while para repetir menu mientras no seleccione 'salir'
+    opciones = [1, 2, 3, 4]
     while (continuar):
         opcionCorrecta = False
         while (not opcionCorrecta):
+            cls()
             print("================= MENU PRINCIPAL =================")
             print("1. Listar cursos")
             print("2. Registrar curso")
@@ -15,27 +16,25 @@ def menuPrincipal():
             print("4. Eliminar curso")
             print("5. Salir")
             print("==================================================")
-            opcion = int(input("Seleccione una opcion: "))
+            opcion = getInt("> Elija una opcion: ")
 
-        # Verifica que se ingrese una opcion valida
-            if opcion < 1 or opcion > 5:
-                print("Opcion incorrecta, seleccione nuevamente")
-            elif opcion == 5:
-                print("\nHas salido, gracias por usar este sistema.\n")
-                continuar = False
-                opcionCorrecta = True
-            else:
+            # Verifica que se ingrese una opcion valida
+            if opcion in opciones:
                 opcionCorrecta = True
                 ejecutarOpcion(opcion)
+            elif opcion == 5:
+                print("\n* Has salido. *\n")
+                continuar = False
+                break
+            else:
+                print("Opcion incorrecta, seleccione nuevamente")
+            pause()
 
-# Funcion para ejecutar la opcion elegida
-
-
+# Ejecuta acciones de la opcion recibida
 def ejecutarOpcion(opc):
     bd = ConexionBD()
 
-    # Opcion Listar cursos
-    if opc == 1:
+    if opc == 1:  # Listar cursos
         try:
             # Variable que recibe los cursos de la base de datos
             cursos = bd.listarCursos()
@@ -46,16 +45,14 @@ def ejecutarOpcion(opc):
         except Exception as err:
             print("Ocurrio un error: ", err)
 
-    # Opcion Registrar curso
-    elif opc == 2:
+    elif opc == 2:  # Registrar curso
         curso = functions.pedirDatosRegistrar()
         try:
             bd.registrarCurso(curso)
         except Exception as err:
             print("Ocurrio un error: ", err)
 
-    # Opcion Actualizar curso
-    elif opc == 3:
+    elif opc == 3:  # Actualizar curso
         try:
             cursos = bd.listarCursos()  # Guardar cursos en la variable cursos
             if len(cursos) > 0:
@@ -69,8 +66,7 @@ def ejecutarOpcion(opc):
         except Exception as err:
             print("Ocurrio un errorr: ", err)
 
-    # Opcion Eliminar curso
-    elif opc == 4:
+    elif opc == 4: # Eliminar curso
         try:
             cursos = bd.listarCursos()  # Guardar cursos en la variable cursos
             if len(cursos) > 0:

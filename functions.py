@@ -1,4 +1,4 @@
-########## Funcion para mostrar cursos existentes ##########
+# ------- Funcion para mostrar cursos existentes -------
 def mostrarCursos(cursos):
     print("\n\t\t\t> Cursos <\n")
     contador = 1  # Contador para enumerar cursos
@@ -9,7 +9,7 @@ def mostrarCursos(cursos):
     print(" ")
 
 
-########## Funcion para registrar un curso nuevo ##########
+#------- Funcion para registrar un curso nuevo -------
 def pedirDatosRegistrar():
     # Validar que ingrese un codigo correcto de 6 digitos
     codigoCorrecto = False
@@ -45,9 +45,8 @@ def pedirDatosRegistrar():
     curso = (codigo, nombre, creditos)
     return curso  # Retornar tupla con los datos ingresados
 
-########## Funcion para modificar un curso ##########
 
-
+#------- Funcion para modificar un curso -------
 def pedirDatosActualizacion(cursos):
     mostrarCursos(cursos)
     existeCodigo = False
@@ -78,16 +77,14 @@ def pedirDatosActualizacion(cursos):
         curso = None
     return curso
 
-########## Funcion para eliminar un curso ##########
-
-
+#------- Funcion para eliminar un curso -------
 def eliminacionCurso(cursos):
     mostrarCursos(cursos)  # Mostrar cursos
 
     existeCodigo = False
     codigoEliminar = input("> Ingrese codigo del curso a eliminar: ")
     for curso in cursos:
-        # curso[0] es 0 porque el codigo es el primer elemento del arreglo de cada curso
+        # curso[0] ya que codigo es el primer elemento de la lista de cada curso
         if curso[0] == codigoEliminar:
             existeCodigo = True
             break
